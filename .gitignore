@@ -1,0 +1,4 @@
+__pycache__/
+.env
+.log.md
+.suggested_improvement.md
