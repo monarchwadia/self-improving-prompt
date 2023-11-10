@@ -11,6 +11,16 @@ def print_header(text):
     print(text)
     print("========================", flush=True)
 
+def append_history(prompt: str):
+    history = Artifact.select().order_by(Artifact.id.desc())
+    history_json = []
+    for artifact in history:
+        history_json.append(model_to_dict(artifact))
+    history_json = json.dumps(history_json)
+    new_prompt = prompt + "\n\n# Artifact Log & History" + history_json
+    return new_prompt
+
+
 if __name__ == "__main__":
     # Setting up dependencies
     db.connect()
@@ -35,7 +45,7 @@ if __name__ == "__main__":
     print_header("Output.")
     output = ow40.prompt_once(
         config_reader.read_output_prompt(),
-        json.dumps(model_to_dict(wip_artifact))
+        wip_artifact.prompt
     )
     print(output)
 
@@ -44,7 +54,7 @@ if __name__ == "__main__":
 
     print_header("Feedback.")
     feedback = ow40.prompt_once(
-        config_reader.read_feedback_prompt(), 
+        append_history(config_reader.read_feedback_prompt()), 
         json.dumps(model_to_dict(wip_artifact))
     )
     print(feedback)
@@ -53,7 +63,7 @@ if __name__ == "__main__":
 
     print_header("New Prompt.")
     new_prompt = ow40.prompt_once(
-        config_reader.read_artifact_prompt(),
+        append_history(config_reader.read_artifact_prompt()),
         json.dumps(model_to_dict(wip_artifact))
     )
     print(new_prompt)

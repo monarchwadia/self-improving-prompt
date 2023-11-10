@@ -1,1 +1,1 @@
-Can you write a self-referential, recursive prompt that can improve itself with every iteration?
+Write a haiku.
