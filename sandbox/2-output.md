@@ -1,3 +1,3 @@
-Rain on ashen leaves,
-Tears buried in autumn's sigh -
-Lonely moon's witness.
+In the crimson fade,
+Murmurs of silk autumn's shroud,
+Loss echoed in shade.
