@@ -1,0 +1,1 @@
+Write a haiku that follows the traditional 5-7-5 syllable structure. The poem should establish a serene mood reflecting nature and the passage of time.
