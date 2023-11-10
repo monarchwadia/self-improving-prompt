@@ -1,3 +1,9 @@
-Play the game with `play.py`
+```
+pip install -r requirements.txt
 
-Improve the prompt with `improve.py`
+# Run an iteration... results will be stored in `artifacts.db`
+python main.py
+
+# Write the database contents to the `output.html` file
+python write.py
+```

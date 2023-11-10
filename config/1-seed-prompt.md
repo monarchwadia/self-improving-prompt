@@ -1,1 +1,1 @@
-Write a haiku.
+Write a one-line microfiction piece.

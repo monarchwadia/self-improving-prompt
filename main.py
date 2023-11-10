@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     print_header("Output.")
     output = ow40.prompt_once(
-        config_reader.read_output_prompt(),
+        "",
         wip_artifact.prompt
     )
     print(output)
