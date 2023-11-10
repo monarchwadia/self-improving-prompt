@@ -4,9 +4,9 @@ from openai_wrapper import OpenaiWrapper
 from sandbox_readwriter import SandboxReadwriter
 
 def print_header(text):
-    print("\n\n========================\n\n")
+    print("========================", flush=True)
     print(text)
-    print("\n\n========================\n\n")
+    print("========================", flush=True)
 
 if __name__ == "__main__":
     # Setting up dependencies
